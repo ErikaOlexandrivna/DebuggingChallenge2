@@ -77,7 +77,19 @@ class _MyHomePageState extends State<MyHomePage> {
             child: const Text(
               'trext',
             ),
-          )
+          ),
+          ElevatedButton(
+            onPressed: () => method(),
+            child: const Text(
+              'trext',
+            ),
+          ),
+          ElevatedButton(
+            onPressed: () => method(),
+            child: const Text(
+              'trext',
+            ),
+          ),
         ],
       ),
     );
