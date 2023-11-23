@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -8,50 +10,80 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Debugging Challenge 2 -2 ',
-      home: ColorChangerScreen(),
+      title: 'Flutter Debugging Demo',
+      home: MyHomePage(),
     );
   }
 }
 
-class ColorChangerScreen extends StatefulWidget {
-  const ColorChangerScreen({super.key});
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
 
   @override
- State<ColorChangerScreen> createState() => _ColorChangerScreenState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _ColorChangerScreenState extends State<ColorChangerScreen> {
-  Color backgroundColor = Colors.white;
-
-  void changeColor() {
-    setState(() {
-      if (backgroundColor == Colors.white) {
-        backgroundColor = Colors.blue;
-      } else  {
-        backgroundColor = Colors.white;
-      }
-      if (backgroundColor == Colors.blue) {
-        backgroundColor = Colors.red;
-      }
-    });
-  }
+class _MyHomePageState extends State<MyHomePage> {
+  List<String> items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+    'Item 6',
+    'Item 7',
+    'Item 8',
+    'Item 9',
+    'Item 10',
+    'Item 11',
+    'Item 12',
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+    'Item 6',
+    'Item 7',
+    'Item 8',
+    'Item 9',
+    'Item 10',
+    'Item 11',
+    'Item 12',
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Color Changer'),
+        title: const Text('Дебагінг Demo'),
       ),
-      body: Container(
-        color: backgroundColor,
-        child: Center(
-          child: ElevatedButton(
-            onPressed: changeColor,
-            child: const Text('Change Color'),
+      body: Column(
+        children: [
+          SizedBox(
+            height: 300,
+            child: ListView.builder(
+              itemCount: items.length,
+              itemBuilder: (context, index) {
+                return ListTile(
+                  title: Text(
+                    items[index],
+                  ),
+                );
+              },
+            ),
           ),
-        ),
+          ElevatedButton(
+            onPressed: () => method(),
+            child: const Text(
+              'trext',
+            ),
+          )
+        ],
       ),
     );
+  }
+
+  void method() {
+    print('Pryvit');
   }
 }
