@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Debugging Challenge 2',
+      title: 'Debugging Challenge 2 -2 ',
       home: ColorChangerScreen(),
     );
   }
